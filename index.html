@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>100vh</title>
+
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        height: 200vh;
+        background-color: gray;
+      }
+
+      .section {
+        flex-grow: 1;
+        height: 100vh;
+        box-shadow: inset 0px 0px 0px 1rem var(--section-color);
+        background-color: white;
+      }
+
+      .section-1 {
+        --section-color: orangered;
+      }
+
+      .section-2 {
+        --section-color: blue;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+    </style>
+
+  </head>
+  <body>
+    <section class="section section-1"></section>
+    <section class="section section-2"></section>
+
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      window.addEventListener("resize", () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+    </script>
+
+  </body>
+</html>
