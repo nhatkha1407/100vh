@@ -12,6 +12,8 @@
         flex-wrap: wrap;
         height: 200vh;
         background-color: gray;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       }
 
       .section {
@@ -19,6 +21,8 @@
         height: 100vh;
         box-shadow: inset 0px 0px 0px 1rem var(--section-color);
         background-color: white;
+        display: grid;
+        place-items: center;
       }
 
       .section-1 {
@@ -26,15 +30,18 @@
       }
 
       .section-2 {
-        --section-color: blue;
+        --section-color: limegreen;
         height: calc(var(--vh, 1vh) * 100);
       }
     </style>
-
   </head>
   <body>
-    <section class="section section-1"></section>
-    <section class="section section-2"></section>
+    <section class="section section-1">
+      <h1>Before</h1>
+    </section>
+    <section class="section section-2">
+      <h1>After</h1>
+    </section>
 
     <script>
       let vh = window.innerHeight * 0.01;
@@ -44,6 +51,5 @@
         document.documentElement.style.setProperty("--vh", `${vh}px`);
       });
     </script>
-
   </body>
 </html>
